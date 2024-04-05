@@ -18,7 +18,6 @@ namespace COMP003B.Assignment2
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseWelcomePage("/Welcome");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -29,8 +28,9 @@ namespace COMP003B.Assignment2
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
+            
             app.Run();
+            app.UseWelcomePage("/Welcome");
         }
     }
 }
